@@ -8,7 +8,15 @@ import json
 
 req = requests.get('http://sdcaf.hungrybeagle.com/menu.php')
 data = req.text
-print(data)
+#print(data)
 # Use the json encoded data that is retrieved from this website and print out the weekly menu
 # You will need to decipher the json decoded data to determine what information the 
 # dictionary object contains
+
+encodedData = json.loads(data)
+for x in encodedData:
+    for z in encodedData[x]:
+        for a in z:
+            print(f"{a}:")
+            print(z[a])
+        print("")

@@ -7,3 +7,10 @@
 
 import json
 
+filename = 'task01c.txt'
+file = open(filename,'r')
+data = file.read()
+
+encodedNumbers = json.loads(data)
+sorted_data = sorted(encodedNumbers, key=lambda x: x)
+print(sorted_data[-1])
